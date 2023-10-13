@@ -4,5 +4,42 @@ import { ref } from 'vue'
 </script>
 
 <template>
-  <h1 class="text-6xl font-thin text-slate-800">I'm Home Page</h1>
+  <div class="brand">
+    <img class="logo" src="logo.svg" alt="logo"/>
+    <h1 class="title">Triviantastic</h1>
+    <img class="logo" src="logo.svg" alt="logo"/>
+  </div>
+
+  <div class="catagories">
+    <RouterLink :to="'/question/category/${n}'" v-for="n in 24" :key="n" class="category">Category - {{ n }}</RouterLink>
+  </div>
 </template>
+
+<style lang="postcss" scoped>
+.brand{
+  @apply flex items-center justify-center gap-4;
+
+
+  & .logo{
+    @apply h-16 w-16;
+  }
+
+  .title{
+    @apply text-6xl font-bold tracking-widest text-blue-400;
+  }
+}
+
+.catagories{
+  @apply grid flex-grow grid-cols-4 gap-12;
+
+  & .category{
+    @apply flex h-32 w-40 items-center justify-center rounded-lg border-4 border-green-300 py-4 font-bold uppercase text-slate-600 transition-colors duration-300;
+  }
+
+  &:hover{
+    @apply cursor-pointer border-red-500 bg-yellow-200 text-white;
+  }
+}
+
+
+</style>
