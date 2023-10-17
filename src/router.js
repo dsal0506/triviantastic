@@ -4,7 +4,7 @@ import HomePage from '@/views/HomePage.vue'
 
 const routes = [
   { path: '/triviantastic/', name: 'Home', component: HomePage },
-  { path: '/question/catergory/:id', name: 'Question', component: () => import('@/views/QuestionPage.vue') },
+  { path: '/question/category/:id', name: 'Question', component: () => import('@/views/QuestionPage.vue') },
 ]
 
 const router = createRouter({
